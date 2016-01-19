@@ -32,25 +32,94 @@ body{
     100%{background-position:27% 0%}
   }
 
-
-
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
 .title, .actionButton{
-  padding:5px 12px;
+  padding:10px 12px;
   float:right;
 }
 .topbar{
   height:32px;
+  padding:5px 5px;
   background-color: #555;
 }
 .title{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:10px solid black;
   border-radius:10px;
-
   position:absolute;
 }
+
+/*
+  *Styling for the michael cera dancer to spin
+*/
+.ceraDancer {
+  position: absolute;
+}
+.spin {
+  -webkit-animation-name: spin;
+      -webkit-animation-duration: 2000ms;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      -moz-animation-name: spin;
+      -moz-animation-duration: 40000ms;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-timing-function: linear;
+      -ms-animation-name: spin;
+      -ms-animation-duration: 40000ms;
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;
+}
+
+@-webkit-keyframes spin {
+      from {
+        -webkit-transform:rotate(0deg);
+      }
+      
+      to {
+        -webkit-transform:rotate(360deg);
+      }
+
+}
+
+/*
+  *Styling for the square dancer class to move in a square path
+*/
+.squareDancer {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
+    -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+        
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+} 
+   
