@@ -1,15 +1,8 @@
 var SquareDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
 
-  // this.$node = $('<span class="squareDancer"></span>');
   this.$node.addClass('squareDancer')
-  // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
-  // so we must keep a copy of the old version of this function
 
-/*  this.oldStep = function() {
-    return Dancer.prototype.step.call(this);
-  };*/
-  this.setPosition(top, left);
 };
 SquareDancer.prototype = Object.create(Dancer.prototype);
 SquareDancer.prototype.constructor = SquareDancer;
