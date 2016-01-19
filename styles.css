@@ -3,9 +3,37 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color: 
   font-size: 18px;
 }
+.danceFloor {
+  height:100%;
+  background: linear-gradient(293deg, #00f41e, #0075c4, #1be7ff, #f42c04, #0c0f0a);
+  background-size: 1000% 1000%;
+
+  -webkit-animation: AnimationName 41s ease infinite;
+  -moz-animation: AnimationName 41s ease infinite;
+  animation: AnimationName 41s ease infinite;
+}
+
+  @-webkit-keyframes AnimationName {
+    0%{background-position:27% 0%}
+    50%{background-position:74% 100%}
+    100%{background-position:27% 0%}
+  }
+  @-moz-keyframes AnimationName {
+    0%{background-position:27% 0%}
+    50%{background-position:74% 100%}
+    100%{background-position:27% 0%}
+  }
+  @keyframes AnimationName { 
+    0%{background-position:27% 0%}
+    50%{background-position:74% 100%}
+    100%{background-position:27% 0%}
+  }
+
+
+
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
@@ -23,5 +51,6 @@ body, a:link, a:visited, a:active{
 .dancer{
   border:10px solid red;
   border-radius:10px;
+
   position:absolute;
 }
