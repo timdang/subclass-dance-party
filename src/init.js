@@ -24,8 +24,7 @@ $(document).ready(function() {
 
     var dancer = new dancerMakerFunction(
       ($(".danceFloor").height() * Math.random()) + 50,
-      $(".danceFloor").width() * Math.random(),
-      (Math.random() * 1000) + 100
+      $(".danceFloor").width() * Math.random(), (Math.random() * 1000) + 100
     );
 
     window.dancers.push(dancer);
@@ -36,35 +35,35 @@ $(document).ready(function() {
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp();
     }
-    
+
   });
 
   $(".spreadOut").on("click", function() {
+    console.log("spreadOut is being called.")
     var dancersLength = window.dancers.length;
     for (var i = 0; i < dancersLength - 1; i++) {
       var dancerPrime = window.dancers[i];
-      for(var j = i + 1; j < dancersLength - 1; j++) {
+      for (var j = (i + 1); j < dancersLength - 1; j++) {
         //Pythag calculation
-        var aSquared = Math.pow(dancerPrime.top - window.dancers[j].top, 2),
-            bSquared = Math.pow(dancerPrime.left - window.dancers[j].left, 2);
+        var aSquared = Math.pow(dancerPrime._top - window.dancers[j]._top, 2),
+          bSquared = Math.pow(dancerPrime._left - window.dancers[j]._left, 2);
         var cPythag = Math.sqrt(aSquared + bSquared);
-        if (cPythag) {
+        if (cPythag < 125) {
           var newLeft = $(".danceFloor").width() * Math.random();
-          console.log(newLeft);
           var newTop = $(".danceFloor").height() * Math.random() + 50;
-          console.log(newTop);
           window.dancers[i].setPosition(newTop, newLeft);
+          console.log("I moved dancer: " + dancers[j])
         }
       }
       //console.log(dancers[i].left)
       // var newLeft = $(".danceFloor").width() * Math.random();
       // console.log(newLeft);
-      // var newTop = $(".danceFloor").height() * Math.random() + 50;
-      // console.log(newTop);
-      // window.dancers[i].setPosition(newTop, newLeft);
+      // var new_to = $(".danceFloor").height() * Math.random() + 50;
+      // console.log(new_to);
+      // window.dancers[i].setPosition(new_to, newLeft);
     }
   });
-  
+
   // $('body').on("click", ".ceraDancer", function() {
   //    $(this).toggleClass('spin')
   //   this.setPosition($(".danceFloor").height() * Math.random() + 50,

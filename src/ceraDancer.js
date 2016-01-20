@@ -4,8 +4,11 @@ var CeraDancer = function(top, left, timeBetweenSteps) {
   // this.$node = $('<span class="ceraDancer"><img src="smallMCera.png"></span>');
   this.$node.addClass('ceraDancer spin');
   this.$node.append('<img src="smallMCera.png">')
-  this.$node.on("click", function() {
-    $(this).toggleClass('spin') 
+  this.$node.mouseover(function() {
+    $(this).toggleClass('spin');
+  });
+  this.$node.mouseout(function() {
+    $(this).toggleClass('spin');
   });
 };
 CeraDancer.prototype = Object.create(Dancer.prototype);
@@ -24,5 +27,5 @@ CeraDancer.prototype.step = function() {
 CeraDancer.prototype.lineUp = function() {
   console.log("This button is working");
   //$(this).css("left", "50px");
-  Dancer.prototype.setPosition.call(this, "70%", null);
+  Dancer.prototype.setPosition.call(this, 700, null);
 };

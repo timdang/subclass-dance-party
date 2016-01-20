@@ -1,13 +1,13 @@
-var SquareDancer = function(top, left, timeBetweenSteps){
+var ShakeDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
 
-  this.$node.addClass('squareDancer')
+  this.$node.addClass('shakeDancer')
 
 };
-SquareDancer.prototype = Object.create(Dancer.prototype);
-SquareDancer.prototype.constructor = SquareDancer;
+ShakeDancer.prototype = Object.create(Dancer.prototype);
+ShakeDancer.prototype.constructor = ShakeDancer;
 
-SquareDancer.prototype.step = function(){
+ShakeDancer.prototype.step = function(){
   // call the old version of step at the beginning of any call to this new version of step
   Dancer.prototype.step.call(this);
   // toggle() is a jQuery method to show/hide the <span> tag.
@@ -16,8 +16,8 @@ SquareDancer.prototype.step = function(){
   //this.$node.toggle();
 };
 
-SquareDancer.prototype.lineUp = function() {
+ShakeDancer.prototype.lineUp = function() {
   console.log("This button is working");
   //$(this).css("left", "50px");
-  Dancer.prototype.setPosition.call(this, null, "100%");
+  Dancer.prototype.setPosition.call(this, null, 1100);
 };
