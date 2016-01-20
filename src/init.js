@@ -1,6 +1,7 @@
 $(document).ready(function() {
   window.dancers = [];
-  var audio = document.getElementsByTagName("audio")[0];
+  var audio1 = document.getElementsByTagName("audio")[0];
+  var audio2 = document.getElementsByTagName("audio")[1];
 
   $(".addDancerButton").on("click", function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -30,15 +31,16 @@ $(document).ready(function() {
 
     window.dancers.push(dancer);
     $(".danceFloor").append(dancer.$node);
-
-    audio.play();
+    audio2.pause();
+    audio1.play();
 
   });
 
   $(".lineUpButton").on("click", function() {
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp();
-      audio.pause();
+      audio1.pause();
+      audio2.pause();
     }
   });
 
@@ -64,6 +66,8 @@ $(document).ready(function() {
       // console.log(new_to);
       // window.dancers[i].setPosition(new_to, newLeft);
     }
+    audio1.pause();
+    audio2.play();
   });
 
   // $('body').on("click", ".ceraDancer", function() {
