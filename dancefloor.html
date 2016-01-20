@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Object Dance Party</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="lib/jquery.js"></script>
-    <script src="src/dancer.js"></script>
-    <script src="src/blinkyDancer.js"></script>
-    <script src="src/shakeDancer.js"></script>
-    <script src="src/ceraDancer.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <div class="topbar">
-      <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a> |
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="ShakeDancer">add a shake dancer</a> |
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="CeraDancer">add a M. Cera dancer</a> |
-      <a href="#" class="lineUpButton">Line Up!</a> |
-      <a href="#" class="spreadOut">Spread out!</a>
-      </div>
-      <div class="danceFloor">
-      </div>
-    <script src="src/init.js"></script>
-  </body>
+
+<head>
+  <title>Object Dance Party</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="lib/jquery.js"></script>
+  <script src="src/dancer.js"></script>
+  <script src="src/blinkyDancer.js"></script>
+  <script src="src/shakeDancer.js"></script>
+  <script src="src/ceraDancer.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="topbar">
+    <span class="title">object dance party</span>
+    <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a> |
+    <a href="#" class="addDancerButton" data-dancer-maker-function-name="ShakeDancer">add a shake dancer</a> |
+    <a href="#" class="addDancerButton" data-dancer-maker-function-name="CeraDancer">add a M. Cera dancer</a> |
+    <a href="#" class="lineUpButton">Line Up!</a> |
+    <a href="#" class="spreadOut">Spread out!</a>
+  </div>
+  <audio src="dance.mp3" volume="0.4" loop="loop"></audio>
+  <div class="danceFloor">
+  </div>
+  <script src="src/init.js"></script>
+</body>
+
 </html>

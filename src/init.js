@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  var audio = document.getElementsByTagName("audio")[0];
 
   $(".addDancerButton").on("click", function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -29,17 +30,19 @@ $(document).ready(function() {
 
     window.dancers.push(dancer);
     $(".danceFloor").append(dancer.$node);
+
+    audio.play();
+
   });
 
   $(".lineUpButton").on("click", function() {
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp();
+      audio.pause();
     }
-
   });
 
   $(".spreadOut").on("click", function() {
-    console.log("spreadOut is being called.")
     var dancersLength = window.dancers.length;
     for (var i = 0; i < dancersLength - 1; i++) {
       var dancerPrime = window.dancers[i];
@@ -52,7 +55,6 @@ $(document).ready(function() {
           var newLeft = $(".danceFloor").width() * Math.random();
           var newTop = $(".danceFloor").height() * Math.random() + 50;
           window.dancers[i].setPosition(newTop, newLeft);
-          console.log("I moved dancer: " + dancers[j])
         }
       }
       //console.log(dancers[i].left)
