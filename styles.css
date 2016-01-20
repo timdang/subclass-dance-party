@@ -3,13 +3,12 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color: 
   font-size: 18px;
+  font-family: 'Bangers', cursive;
 }
-.danceFloor {
-  height: 750px;
-  width: 1200px;
-  background: linear-gradient(293deg, #00f41e, #0075c4, #1be7ff, #f42c04, #0c0f0a);
+
+body{
+  background: linear-gradient(293deg, #00f41e, #0075c4, #5c2751, #f42c04);
   background-size: 1000% 1000%;
 
   -webkit-animation: AnimationName 41s ease infinite;
@@ -27,14 +26,20 @@ body{
     50%{background-position:74% 100%}
     100%{background-position:27% 0%}
   }
-  @keyframes AnimationName { 
+  @keyframes AnimationName {
     0%{background-position:27% 0%}
     50%{background-position:74% 100%}
     100%{background-position:27% 0%}
   }
+.danceFloor {
+  height: 750px;
+  width: 1200px;
+}
+
 
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: #00f41e;
+  text-decoration: none;
 }
 .title, .actionButton{
   padding:10px 12px;
@@ -42,15 +47,16 @@ body, a:link, a:visited, a:active{
 }
 .topbar{
   height:32px;
-  padding:5px 5px;
-  background-color: #555;
+  padding:10px 10px;
+  background-color: rgba(92, 39, 31, .25);
 }
 .title{
-  background-color: #777;
+  background-color: rgba(244, 44, 4, .5);
+  font-size: 150%;
 }
 .dancer{
-  border:10px solid black;
-  border-radius:10px;
+  border:50px solid rgba(255, 255, 255, .5);
+  border-radius:50px;
   position:absolute;
 }
 
@@ -76,14 +82,9 @@ body, a:link, a:visited, a:active{
 }
 
 @-webkit-keyframes spin {
-      from {
-        -webkit-transform:rotate(0deg);
-      }
-      
-      to {
-        -webkit-transform:rotate(360deg);
-      }
+      from { -webkit-transform:rotate(0deg); }
 
+      to { -webkit-transform:rotate(360deg); }
 }
 
 /*
@@ -92,33 +93,17 @@ body, a:link, a:visited, a:active{
 .shakeDancer {
     width: 100px;
     height: 100px;
-    background-color: black;
+    background-color: rgba(27, 231, 255, .5);
+    border-radius: 10px;
     position: absolute;
-    animation: shake .5s ease-in-out infinite;        
+    animation: shake .5s ease-in-out infinite;
 }
 
 @keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-
-  20% {
-    transform: translateX(-10px);
-  }
-
-  40% {
-    transform: translateX(10px);
-  }
-
-  60% {
-    transform: translateX(-10px);
-  }
-
-  80% {
-    transform: translateX(10px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+  0% {transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
 }
